@@ -1,0 +1,32 @@
+version: "3.8"
+
+services:
+  paymybuddy-db:
+    image: mysql:8
+    container_name: paymybuddy-db
+    environment:
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./initdb:/docker-entrypoint-initdb.d
+    ports:
+      - "3306:3306"
+
+  paymybuddy-backend:
+    build: .
+    container_name: paymybuddy-backend
+    ports:
+      - "8080:8080"
+    depends_on:
+      - paymybuddy-db
+    environment:
+      SPRING_DATASOURCE_URL: ${SPRING_DATASOURCE_URL}
+      SPRING_DATASOURCE_USERNAME: ${SPRING_DATASOURCE_USERNAME}
+      SPRING_DATASOURCE_PASSWORD: ${SPRING_DATASOURCE_PASSWORD}
+
+volumes:
+  db_data:
+
