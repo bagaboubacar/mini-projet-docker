@@ -1,7 +1,14 @@
 
 # PayMyBuddy - Financial Transaction Application
 
-This repository contains the *PayMyBuddy* application, which allows users to manage financial transactions. It includes a Spring Boot backend and MySQL database.
+PayMyBuddy est une application de gestion de transactions financières entre amis.
+Ce projet est un Proof of Concept (POC) visant à améliorer le déploiement et la gestion de l’application grâce aux pratiques DevOps et à la conteneurisation avec Docker.
+L’application est composée :
+-	d’un backend Spring Boot
+-	d’une base de données MySQL
+-	d’une orchestration via Docker Compose
+-	d’un déploiement d’images via un Docker Registry privé
+
 
 **![PayMyBuddy Overview](https://lh7-rt.googleusercontent.com/docsz/AD_4nXf0fGeMjotdY0KzJL13cmGhXad3GM_kn7OSXZJ4CCSQ89zZTlrhBVVi91QjRMgVeszmUMAMAgyavzr4VyQ9YOAUiWmL2sF6aVQYiJPLZfztxv7ERNsIra2O_2SYIX5ZFY5eOARMeI2qnOwrIymuyJnvtuYs?key=mLqAl_ccMoG4hHcRzSYKpw)**
 
